@@ -24,32 +24,33 @@ spec:
       maxWorkers: 1
       attributes:
         cors:
-          enabled: true
-          allowOrigins:
-            - "*"
-          allowHeaders:
-            - "Accept"
-            - "Content-Length"
-            - "Content-Type"
-            - "X-nuclio-log-level"
-            - "Authorization"
-          allowMethods:
-            - "GET"
-            - "HEAD"
-            - "POST"
-            - "PATCH"
           allowCredentials: false
+          allowHeaders:
+            - Accept
+            - Content-Length
+            - Content-Type
+            - X-nuclio-log-level
+            - Authorization
+          allowMethods:
+            - GET
+            - HEAD
+            - POST
+            - PATCH
+          allowOrigins:
+            - '*'
+          enabled: true
           preflightMaxAgeSeconds: 3600
   version: 1
   build:
-    functionSourceCode: I0NvcHlyaWdodCAyMDE3IFRoZSBOdWNsaW8gQXV0aG9ycy4KIwojIExpY2Vuc2VkIHVuZGVyIHRoZSBBcGFjaGUgTGljZW5zZSwgVmVyc2lvbiAyLjAgKHRoZSAiTGljZW5zZSIpOwojIHlvdSBtYXkgbm90IHVzZSB0aGlzIGZpbGUgZXhjZXB0IGluIGNvbXBsaWFuY2Ugd2l0aCB0aGUgTGljZW5zZS4KIyBZb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXQKIwojICAgIGh0dHA6Ly93d3cuYXBhY2hlLm9yZy9saWNlbnNlcy9MSUNFTlNFLTIuMAojCiMgVW5sZXNzIHJlcXVpcmVkIGJ5IGFwcGxpY2FibGUgbGF3IG9yIGFncmVlZCB0byBpbiB3cml0aW5nLCBzb2Z0d2FyZQojIGRpc3RyaWJ1dGVkIHVuZGVyIHRoZSBMaWNlbnNlIGlzIGRpc3RyaWJ1dGVkIG9uIGFuICJBUyBJUyIgQkFTSVMsCiMgV0lUSE9VVCBXQVJSQU5USUVTIE9SIENPTkRJVElPTlMgT0YgQU5ZIEtJTkQsIGVpdGhlciBleHByZXNzIG9yIGltcGxpZWQuCiMgU2VlIHRoZSBMaWNlbnNlIGZvciB0aGUgc3BlY2lmaWMgbGFuZ3VhZ2UgZ292ZXJuaW5nIHBlcm1pc3Npb25zIGFuZAojIGxpbWl0YXRpb25zIHVuZGVyIHRoZSBMaWNlbnNlLgpmcm9tIHJlcXVlc3RzIGltcG9ydCBwb3N0CmZyb20gbW9uZ29lbmdpbmUgaW1wb3J0IGNvbm5lY3QKZnJvbSBvcyBpbXBvcnQgZ2V0ZW52CgoKZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOgogICAgb3duZXIgPSBldmVudC5ib2R5LmdldCgib3duZXIiKQogICAgcmVwbyA9IGV2ZW50LmJvZHkuZ2V0KCJyZXBvIikKICAgIG5ld19vd25lciA9IGV2ZW50LmJvZHkuZ2V0KCJuZXdfb3duZXIiKQogICAgYWNjZXNzX3Rva2VuID0gZXZlbnQuaGVhZGVycy5nZXQoJ0F1dGhvcml6YXRpb24nKS5zcGxpdCgiICIpWzFdCgogICAgaGVhZGVycz0geydBY2NlcHQnOiAnYXBwbGljYXRpb24vdm5kLmdpdGh1Yi52Mytqc29uJywgIkF1dGhvcml6YXRpb24iOiBmInRva2VuIHthY2Nlc3NfdG9rZW59In0KCiAgICAKCiAgICBib2R5ID0geyJuZXdfb3duZXIiOm5ld19vd25lcn0KICAgIHRyYW5zZmVyX3Jlc3BvbnNlID0gcG9zdChmImh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3Mve293bmVyfS97cmVwb30vdHJhbnNmZXIiLCBqc29uPWJvZHksIGhlYWRlcnM9aGVhZGVycykKCiAgICBpZiB0cmFuc2Zlcl9yZXNwb25zZS5zdGF0dXNfY29kZSA9PSAyMDA6CiAgICAgICAgY29ubmVjdChnZXRlbnYoImRiX25hbWUiKSwgaG9zdD1nZXRlbnYoIm1vbmdvX3VybCIpLCBwb3J0PWludChnZXRlbnYoIm1vbmdvX3BvcnQiKSksIGFsaWFzPSJkZWZhdWx0IikKICAgICAgICBBZG9wdGFibGUub2JqZWN0cyhvd25lcj1vd25lciwgcmVwb3NpdG9yeT1mIntvd25lcn0ve3JlcG99IikudXBkYXRlKG5ld19vd25lcj1uZXdfb3duZXIpCgogICAgcmV0dXJuIGNvbnRleHQuUmVzcG9uc2UoYm9keT1mJ3t0cmFuc2Zlcl9yZXNwb25zZS50ZXh0fScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBoZWFkZXJzPXt9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29udGVudF90eXBlPSd0ZXh0L3BsYWluJywKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1c19jb2RlPXRyYW5zZmVyX3Jlc3BvbnNlLnN0YXR1c19jb2RlKQoKCgpmcm9tIG1vbmdvZW5naW5lIGltcG9ydCBEb2N1bWVudApmcm9tIG1vbmdvZW5naW5lLmZpZWxkcyBpbXBvcnQgU3RyaW5nRmllbGQKCgpjbGFzcyBBZG9wdGFibGUoRG9jdW1lbnQpOgogICAgbWV0YSA9IHsKICAgICAgICAiY29sbGVjdGlvbiI6ICJhZG9wdGFibGVzIiwKICAgICAgICAiaW5kZXhlcyI6IFt7ImZpZWxkcyI6ICgicmVwb3NpdG9yeSIsICJvd25lciIpLCAidW5pcXVlIjogVHJ1ZX1dLAogICAgfQogICAgcmVwb3NpdG9yeSA9IFN0cmluZ0ZpZWxkKHJlcXVpcmVkPVRydWUpCiAgICBkZXNjcmlwdGlvbiA9IFN0cmluZ0ZpZWxkKHJlcXVpcmVkPUZhbHNlKQogICAgb3duZXIgPSBTdHJpbmdGaWVsZChyZXF1aXJlZD1UcnVlKQogICAgbmV3X293bmVyID0gU3RyaW5nRmllbGQocmVxdWlyZWQ9RmFsc2UpCg==
+    functionSourceCode: I0NvcHlyaWdodCAyMDE3IFRoZSBOdWNsaW8gQXV0aG9ycy4KIwojIExpY2Vuc2VkIHVuZGVyIHRoZSBBcGFjaGUgTGljZW5zZSwgVmVyc2lvbiAyLjAgKHRoZSAiTGljZW5zZSIpOwojIHlvdSBtYXkgbm90IHVzZSB0aGlzIGZpbGUgZXhjZXB0IGluIGNvbXBsaWFuY2Ugd2l0aCB0aGUgTGljZW5zZS4KIyBZb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXQKIwojICAgIGh0dHA6Ly93d3cuYXBhY2hlLm9yZy9saWNlbnNlcy9MSUNFTlNFLTIuMAojCiMgVW5sZXNzIHJlcXVpcmVkIGJ5IGFwcGxpY2FibGUgbGF3IG9yIGFncmVlZCB0byBpbiB3cml0aW5nLCBzb2Z0d2FyZQojIGRpc3RyaWJ1dGVkIHVuZGVyIHRoZSBMaWNlbnNlIGlzIGRpc3RyaWJ1dGVkIG9uIGFuICJBUyBJUyIgQkFTSVMsCiMgV0lUSE9VVCBXQVJSQU5USUVTIE9SIENPTkRJVElPTlMgT0YgQU5ZIEtJTkQsIGVpdGhlciBleHByZXNzIG9yIGltcGxpZWQuCiMgU2VlIHRoZSBMaWNlbnNlIGZvciB0aGUgc3BlY2lmaWMgbGFuZ3VhZ2UgZ292ZXJuaW5nIHBlcm1pc3Npb25zIGFuZAojIGxpbWl0YXRpb25zIHVuZGVyIHRoZSBMaWNlbnNlLgpmcm9tIHJlcXVlc3RzIGltcG9ydCBwb3N0CmZyb20gbW9uZ29lbmdpbmUgaW1wb3J0IGNvbm5lY3QKZnJvbSBvcyBpbXBvcnQgZ2V0ZW52CmltcG9ydCBiYXNlNjQKaW1wb3J0IGpzb24KCgpkZWYgaGFuZGxlcihjb250ZXh0LCBldmVudCk6CiAgICByZXBvID0gZXZlbnQuYm9keS5nZXQoInJlcG8iKQogICAgbmV3X293bmVyID0gZXZlbnQuYm9keS5nZXQoIm5ld19vd25lciIpCiAgICBtZXNzYWdlID0ganNvbi5sb2FkcyhiYXNlNjQudXJsc2FmZV9iNjRkZWNvZGUoZXZlbnQuaGVhZGVycy5nZXQoIkF1dGhvcml6YXRpb24iKS5zcGxpdCgiLiIpWzFdKyAnPT0nKSkKCiAgICBoZWFkZXJzPSB7J0FjY2VwdCc6ICdhcHBsaWNhdGlvbi92bmQuZ2l0aHViLnYzK2pzb24nLCAiQXV0aG9yaXphdGlvbiI6IGYidG9rZW4ge21lc3NhZ2UuZ2V0KCdnaXRodWJfdG9rZW4nKX0ifQoKICAgIGJvZHkgPSB7Im5ld19vd25lciI6bmV3X293bmVyfQogICAgdHJhbnNmZXJfcmVzcG9uc2UgPSBwb3N0KGYiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy97bWVzc2FnZS5nZXQoJ3VzZXJuYW1lJyl9L3tyZXBvfS90cmFuc2ZlciIsIGpzb249Ym9keSwgaGVhZGVycz1oZWFkZXJzKQoKCiAgICBpZiB0cmFuc2Zlcl9yZXNwb25zZS5zdGF0dXNfY29kZSA9PSAyMDIgOgogICAgICAgIGNvbm5lY3QoZ2V0ZW52KCJkYl9uYW1lIiksIGhvc3Q9Z2V0ZW52KCJtb25nb191cmwiKSwgcG9ydD1pbnQoZ2V0ZW52KCJtb25nb19wb3J0IikpLCBhbGlhcz0iZGVmYXVsdCIpCiAgICAgICAgQWRvcHRhYmxlLm9iamVjdHMob3duZXI9bWVzc2FnZS5nZXQoJ3VzZXJuYW1lJyksIHJlcG9zaXRvcnk9ZiJ7bWVzc2FnZS5nZXQoJ3VzZXJuYW1lJyl9L3tyZXBvfSIpLnVwZGF0ZShuZXdfb3duZXI9bmV3X293bmVyKQoKICAgIHJldHVybiBjb250ZXh0LlJlc3BvbnNlKGJvZHk9Zid7dHJhbnNmZXJfcmVzcG9uc2UudGV4dH0nLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgaGVhZGVycz17fSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRlbnRfdHlwZT0ndGV4dC9wbGFpbicsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXNfY29kZT10cmFuc2Zlcl9yZXNwb25zZS5zdGF0dXNfY29kZSkKCgpmcm9tIG1vbmdvZW5naW5lIGltcG9ydCBEb2N1bWVudApmcm9tIG1vbmdvZW5naW5lLmZpZWxkcyBpbXBvcnQgU3RyaW5nRmllbGQKCmNsYXNzIEFkb3B0YWJsZShEb2N1bWVudCk6CiAgICBtZXRhID0gewogICAgICAgICJjb2xsZWN0aW9uIjogImFkb3B0YWJsZXMiLAogICAgICAgICJpbmRleGVzIjogW3siZmllbGRzIjogKCJyZXBvc2l0b3J5IiwgIm93bmVyIiksICJ1bmlxdWUiOiBUcnVlfV0sCiAgICB9CiAgICByZXBvc2l0b3J5ID0gU3RyaW5nRmllbGQocmVxdWlyZWQ9VHJ1ZSkKICAgIGRlc2NyaXB0aW9uID0gU3RyaW5nRmllbGQocmVxdWlyZWQ9RmFsc2UpCiAgICBvd25lciA9IFN0cmluZ0ZpZWxkKHJlcXVpcmVkPVRydWUpCiAgICBuZXdfb3duZXIgPSBTdHJpbmdGaWVsZChyZXF1aXJlZD1GYWxzZSkK
     commands:
       - 'pip install requests'
       - 'pip install mongoengine'
+      - 'pip install PyJWT'
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1622453181
+    timestamp: 1622466023
   loggerSinks:
     - level: debug
   platform: {}
