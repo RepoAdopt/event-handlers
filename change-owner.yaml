@@ -23,6 +23,7 @@ spec:
       name: default-http
       maxWorkers: 1
       attributes:
+        port: 9700
         cors:
           allowCredentials: false
           allowHeaders:
