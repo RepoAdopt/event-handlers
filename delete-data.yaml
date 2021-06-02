@@ -4,7 +4,7 @@ metadata:
     nuclio.io/project-name: repoadopt
 spec:
   handler: "main:handler"
-  runtime: "python:3.9"
+  runtime: "python:3.6"
   env:
     - name: mongo_url
       value: "mongodb://192.168.178.124/"
